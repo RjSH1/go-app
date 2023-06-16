@@ -30,8 +30,8 @@ resources:
   - name: go_build_publish_gitrepo
     type: GitRepo
     configuration:
-      path: bhanurp/build-publish
-      gitProvider: gh_int_bhanu
+      path: RjSH1/build-publish
+      gitProvider: rjGithub
       branches:
         include: main
       cloneProtocol: https
@@ -41,7 +41,7 @@ resources:
   - name: go_publish_gitrepo
     type: GitRepo
     configuration:
-      path: bhanurp/go-publish
+      path: RjSH1/go-publish
       gitProvider: {{ .Values.gitIntegration }}
       branches:
         include: ^{{ .Values.mainBranch }}$
@@ -74,7 +74,7 @@ pipelines:
           outputResources:
             - name: docker_build_info
           integrations:
-            - name: int_default_artifactory
+            - name: myArtifactory
         execution:
           onStart:
             - jf c show
