@@ -1,6 +1,6 @@
-repoPath: bhanurp/go-app
+repoPath: RjSH1/go-app
 mainBranch: main
 gitToken: gh_frogbot
-artIntegration: int_default_artifactory
+artIntegration: myArtifactory
 accessToken: jfrogPlatform
-gitIntegration: gh_int_bhanu
+gitIntegration: rjGithub
