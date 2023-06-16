@@ -19,7 +19,7 @@ resources:
   - name: go_build_gitrepo
     type: GitRepo
     configuration:
-      path: bhanurp/go-build
+      path: RjSH1/go-build
       gitProvider: {{ .Values.gitIntegration }}
       branches:
         include: ^{{ .Values.mainBranch }}$
