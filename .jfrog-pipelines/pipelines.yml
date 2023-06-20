@@ -95,7 +95,7 @@ pipelines:
                 resolveRepository: tasks-go-virtual
                 outputLocation: ${step_tmp_dir}
                 outputFile: myapp
-                rtIntegrationName: int_default_artifactory
+                rtIntegrationName: myArtifactory
                 goCommand: ""
             - task: $res_go_publish_gitrepo_resourcePath
               repository: pipelines-tasks-virtual
