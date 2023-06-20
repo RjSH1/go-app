@@ -92,7 +92,7 @@ pipelines:
               input:
                 resourceName: go_app_gitrepo
                 executionLocation: ""
-                resolveRepository: go-virtual
+                resolveRepository: tasks-go-virtual
                 outputLocation: ${step_tmp_dir}
                 outputFile: myapp
                 rtIntegrationName: int_default_artifactory
