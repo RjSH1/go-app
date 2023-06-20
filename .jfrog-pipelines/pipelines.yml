@@ -82,12 +82,12 @@ pipelines:
             - echo $IS_K8S_BUILD_PLANE
           onExecute:
             - task: jfrog/setup-go@v0.1.0
-              repository: tasks-virtual
+              repository: pipelines-tasks-virtual
               id: install-go
               input:
                 version: 1.19.5
             - task: $res_go_build_gitrepo_resourcePath
-              repository: tasks-virtual
+              repository: pipelines-tasks-virtual
               id: go_build_task
               input:
                 resourceName: go_app_gitrepo
@@ -98,7 +98,7 @@ pipelines:
                 rtIntegrationName: int_default_artifactory
                 goCommand: ""
             - task: $res_go_publish_gitrepo_resourcePath
-              repository: tasks-virtual
+              repository: pipelines-tasks-virtual
               id: go_publish_task
               input:
                 targetRepository: go-local
@@ -112,13 +112,13 @@ pipelines:
                 failOnScan:
                 retry: true
             - task: jfrog/docker-build@v0.0.1
-              repository: tasks-virtual
+              repository: pipelines-tasks-virtual
               id: docker_build_go_app
               input:
                 resourceName: "go_app_gitrepo"
                 dockerImage: "pipeecosys1.jfrogdev.org/pipelines-docker/go-app:latest"
             - task: jfrog/docker-push@v0.0.2
-              repository: tasks-virtual
+              repository: pipelines-tasks-virtual
               id: docker_push_go_app
               input:
                 dockerImage: "pipeecosys1.jfrogdev.org/pipelines-docker/go-app:latest"
