@@ -108,7 +108,7 @@ pipelines:
                 resourceName: go_build_gitrepo
                 sourceLocation: ""
                 autoPublishBuildInfo: true
-                xrayScan: true
+                # xrayScan: true
                 failOnScan:
                 retry: true
             - task: jfrog/docker-build@v0.0.1
@@ -123,6 +123,6 @@ pipelines:
               input:
                 dockerImage: "pipeecosys1.jfrogdev.org/pipelines-docker/go-app:latest"
                 autoPublishBuildInfo: "true"
-                xrayScan: "true"
+                # xrayScan: "true"
                 failOnScan: "false"
                 outputBuildInfoResourceName: "docker_build_info"
